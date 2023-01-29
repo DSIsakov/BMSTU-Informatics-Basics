@@ -1,0 +1,5 @@
+|--tree.py
+|--wc.py
+|--txt.txt
+
+0 directories, 3 files

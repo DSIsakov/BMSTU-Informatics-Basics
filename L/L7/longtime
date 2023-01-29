@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+PID=0
+TIMESTAMP=$(date +%Y-%m-%d-%T)
+LOGS="output_$TIMESTAMP.log"
+ERRORS="errors_$TIMESTAMP.log"
+SCRIPT_PATH=$1
+TIMEOUT=$2
+let TIMEOUT=$TIMEOUT*1
+
+
+while [ 0 ]
+do
+	if ! ps -p $PID > /dev/null 2>&1
+	then
+		bash $SCRIPT_PATH 1>>$LOGS 2>>$ERRORS &
+		PID=$!
+		echo "PID: $PID"
+	else
+		echo "The programm is already running"
+	fi
+	sleep $TIMEOUT
+done

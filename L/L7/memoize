@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+
+
+def function(f):
+	memo = {}
+	
+	def memoized_f(*args):
+		if args in memo:
+			return memo[args]
+		memo[args] = f(args)
+		
+		return memo[args]
+	
+	return memoized_f
+	
+	
+	
+def s(*a):
+	print(sum(a))
+	
+	
+m = function(s)
+args = list(map(int, input().split()))
+m(*args)
+args = list(map(int, input().split()))
+m(*args)
+args = list(map(int, input().split()))
+m(*args)
