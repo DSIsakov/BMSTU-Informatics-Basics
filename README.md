@@ -1,2 +1,2 @@
-# BMSTU Informatics Basics
+# Основы Информатики
  
